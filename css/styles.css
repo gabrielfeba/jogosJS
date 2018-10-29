@@ -37,3 +37,23 @@ header>div:last-child {
     height: 3px;
     background-color: black;
 }
+@media screen and (min-width: 540px) {
+    header {
+        justify-content: space-around;
+    }
+    header>nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 65vw;
+        height: 100%;
+        max-width: 500px;
+    }
+    header>nav>a{
+        text-decoration: none;
+        color: black;
+    }
+    header>div:last-child {
+        display: none;
+    }
+}
