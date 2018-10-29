@@ -37,6 +37,14 @@ header>div:last-child {
     height: 3px;
     background-color: black;
 }
+header>nav>a{
+    text-decoration: none;
+    text-align: center;
+    transition: 0.5s;
+}
+header>nav>a:hover {
+    font-size: 1.05em;
+}
 @media screen and (min-width: 540px) {
     header {
         justify-content: space-around;
@@ -48,10 +56,6 @@ header>div:last-child {
         width: 65vw;
         height: 100%;
         max-width: 500px;
-    }
-    header>nav>a{
-        text-decoration: none;
-        color: black;
     }
     header>div:last-child {
         display: none;
