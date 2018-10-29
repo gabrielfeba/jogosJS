@@ -31,6 +31,7 @@ header>div:last-child {
     align-content: center;
     height: 76%;
     margin-right: 10px;
+    cursor: pointer;
 }
 .linhaHamburguer {
     width: 35px;
