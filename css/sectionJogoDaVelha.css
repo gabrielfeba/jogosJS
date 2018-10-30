@@ -1,0 +1,24 @@
+section {
+    min-height: calc(100vh - 125px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section>div {
+    display: flex;
+}
+section>div:nth-child(2) {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.caixa {
+    width: 30vw;
+    height: 30vw;
+    max-width: 172px;
+    max-height: 172px;
+}
+.caixa:nth-child(2) {
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+}
