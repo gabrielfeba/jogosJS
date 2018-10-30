@@ -46,6 +46,41 @@ header>nav>a{
 header>nav>a:hover {
     font-size: 1.05em;
 }
+/* --section-- */
+section {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+section>div {
+    margin: 20px 1.3vw;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 5px;
+}
+section>div>img {
+    width: 100%;
+    border-radius: 5px;
+}
+section>div>h3 {
+    margin: 8px 0;
+}
+section>div>button {
+    border: none;
+    padding: 5px;
+    border: gray solid 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+section>div>button:hover {
+    background-color: gray;
+}
+section>div>button>a {
+    text-decoration: none;
+    color: black;
+}
 @media screen and (min-width: 540px) {
     header {
         justify-content: space-around;
