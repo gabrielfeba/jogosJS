@@ -1,0 +1,29 @@
+@media screen and (min-width: 540px) {
+    header {
+        justify-content: space-around;
+    }
+    header>nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 65vw;
+        height: 100%;
+        max-width: 500px;
+    }
+    header>div:last-child {
+        display: none;
+    }
+}
+@media screen and (min-width: 470px) {
+    footer>nav {
+        flex-direction: row;
+    }
+}
+@media screen and (min-width: 870px) {
+    footer {
+        flex-direction: row;
+    }
+    footer>nav {
+        width: 60%;
+    }
+}
