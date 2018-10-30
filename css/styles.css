@@ -132,3 +132,16 @@ footer>nav>div>img {
         display: none;
     }
 }
+@media screen and (min-width: 470px) {
+    footer>nav {
+        flex-direction: row;
+    }
+}
+@media screen and (min-width: 870px) {
+    footer {
+        flex-direction: row;
+    }
+    footer>nav {
+        width: 60%;
+    }
+}
