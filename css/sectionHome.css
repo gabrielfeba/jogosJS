@@ -20,7 +20,7 @@ section>div>h3 {
 }
 section>div>button {
     border: none;
-    padding: 5px;
+    padding: 5px 10px;
     border: gray solid 2px;
     cursor: pointer;
     border-radius: 5px;
@@ -31,4 +31,5 @@ section>div>button:hover {
 section>div>button>a {
     text-decoration: none;
     color: black;
+    font-size: 1.1em;
 }

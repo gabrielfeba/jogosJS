@@ -22,7 +22,7 @@ header>div:first-child {
     justify-content: center;
     align-items: center;
     display: flex;
-    font-size: 16pt;
+    font-size: 20pt;
 }
 header>div:last-child {
     display: flex;
@@ -41,7 +41,6 @@ header>div:last-child {
 header>nav>a{
     text-decoration: none;
     text-align: center;
-    transition: 0.5s;
 }
 header>nav>a:hover {
     font-size: 1.05em;
