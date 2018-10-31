@@ -35,6 +35,7 @@ function alterarDisplayMenu() {
         menu.style.top  = "70px";
         menu.style.padding = "20px 40px";
         menu.style.boxShadow = "0 5px 5px #000";
+        menu.style.zIndex = "2";
     } else if(menu.style.display == "block"){
         menu.style.display = "";
         menu.style.position = "static";
@@ -47,6 +48,7 @@ function alterarDisplayMenu() {
         menu.style.top  = "";
         menu.style.padding = "";
         menu.style.boxShadow = "";
+        menu.style.zIndex = "";
     }
 }
 
