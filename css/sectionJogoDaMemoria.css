@@ -1,0 +1,46 @@
+section {
+    min-height: calc(100vh - 125px);
+    width: 100%;
+    max-width: 560px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    perspective: 800px;
+}
+section>div {
+    margin: 0 4px;
+    border: 1px solid;
+    position: relative;
+    transition: all .4s ease-in-out;
+    transform-style: preserve-3d;
+}
+section>div>div:first-child {
+    position: absolute;
+    background: gray;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+section>div>div:last-child {
+    position: absolute;
+    background: blue;
+    top: 0;
+    left: 0;
+    transform: translateX(-180deg);
+}
+section>div, section>div>div:first-child, section>div>div:last-child {
+    width: 10vh;
+    height: 10vh;
+    cursor: pointer;
+    border-radius: 2px;
+}
+@media screen and (min-width: 480px) {
+    section>div, section>div>div:first-child, section>div>div:last-child {
+        width: 80px;
+        height: 80px;
+    }
+}
