@@ -1,5 +1,8 @@
 const blocos = document.querySelectorAll("section>div");
 const blocosFrente = document.querySelectorAll("section>div>div:last-child");
+
+let paraVerificar = [];
+
 function embaralhar(lista) {
     let novaLista = [];
     let i = 0;
@@ -44,8 +47,29 @@ function adicionarFigura() {
         blocosFrente[i].style.backgroundImage = `url(${figuras[i]})`;
     }
 }
+function verificar(bloco) {
+    paraVerificar[paraVerificar.length] = bloco;
+    if(paraVerificar.length == 2) {
+        if(paraVerificar[0].querySelector("div:last-child").style.backgroundImage == paraVerificar[1].querySelector("div:last-child").style.backgroundImage) {
+            paraVerificar[0].onclick = "";
+            paraVerificar[1].onclick = "";
+            setTimeout(() => {
+                paraVerificar[0].style.opacity = "0";
+                paraVerificar[1].style.opacity = "0";
+                paraVerificar = [];
+            },500);
+        } else {
+            setTimeout(() => {
+                paraVerificar[0].style.transform = "";
+                paraVerificar[1].style.transform = "";
+                paraVerificar = [];
+            },500);
+        }
+    }
+}
 function girar(event) {
     event.target.parentNode.style.transform = "rotateY(180deg)";
+    verificar(event.target.parentNode);
 }
 
 for(let bloco of blocos) {
