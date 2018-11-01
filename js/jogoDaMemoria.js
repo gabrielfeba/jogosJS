@@ -40,9 +40,8 @@ function adicionarFigura() {
         "https://sc.mogicons.com/c/360.jpg"
     ];
     figuras = embaralhar(figuras);
-    console.log(figuras);
-    for(let indice in blocosFrente) {
-        blocosFrente[indice].style.backgroundImage = `url(${figuras[indice]})`;
+    for(let i = 0; i < blocosFrente.length; i++) {
+        blocosFrente[i].style.backgroundImage = `url(${figuras[i]})`;
     }
 }
 function girar(event) {
