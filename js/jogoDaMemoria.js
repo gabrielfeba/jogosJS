@@ -54,16 +54,28 @@ function ganhou() {
     retorno.innerHTML = `Você ganhou com ${tentativas} tentativas.`
 }
 function verificar(bloco) {
-    if(paraVerificar != [] && paraVerificar[0] != bloco) {
-        paraVerificar[paraVerificar.length] = bloco;
+    let blocoGeral = bloco;
+
+    if(paraVerificar != [] && paraVerificar[0] != blocoGeral) {
+        paraVerificar.push(blocoGeral);
     }
+
     if(paraVerificar.length == 2) {
-        if(paraVerificar[0].querySelector("div:last-child").style.backgroundImage == paraVerificar[1].querySelector("div:last-child").style.backgroundImage) {
-            paraVerificar[0].onclick = "";
-            paraVerificar[1].onclick = "";
+        let blocoGeralUm = paraVerificar[0];
+        let blocoGeralDois = paraVerificar[1];
+
+        let imgBlocoFrenteUm = blocoGeralUm.querySelector("div:last-child").style.backgroundImage;
+        let imgBlocoFrenteDois = blocoGeralDois.querySelector("div:last-child").style.backgroundImage;
+
+        let blocoCostasUm = blocoGeralUm.querySelector("div:first-child");
+        let blocoCostasDois = blocoGeralDois.querySelector("div:first-child");
+
+        if(imgBlocoFrenteUm == imgBlocoFrenteDois) {
+            blocoCostasUm.onclick = "";
+            blocoCostasDois.onclick = "";
             setTimeout(() => {
-                paraVerificar[0].style.opacity = "0";
-                paraVerificar[1].style.opacity = "0";
+                blocoGeralUm.style.opacity = "0";
+                blocoGeralDois.style.opacity = "0";
                 paraVerificar = [];
                 pares++;
                 if(pares == 12) {
@@ -72,8 +84,8 @@ function verificar(bloco) {
             },500);
         } else {
             setTimeout(() => {
-                paraVerificar[0].style.transform = "";
-                paraVerificar[1].style.transform = "";
+                blocoGeralUm.style.transform = "";
+                blocoGeralDois.style.transform = "";
                 paraVerificar = [];
             },500);
         }
