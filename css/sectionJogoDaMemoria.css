@@ -39,6 +39,11 @@ section>div, section>div>div:first-child, section>div>div:last-child {
     cursor: pointer;
     border-radius: 2px;
 }
+section>span {
+    position: absolute;
+    text-align: center;
+    font-size: 25pt;
+}
 @media screen and (min-width: 480px) {
     section>div, section>div>div:first-child, section>div>div:last-child {
         width: 80px;

@@ -1,7 +1,10 @@
 const blocosCostas = document.querySelectorAll("section>div>div:first-child");
 const blocosFrente = document.querySelectorAll("section>div>div:last-child");
+const retorno = document.querySelector("section>span");
 
 let paraVerificar = [];
+let tentativas = 0;
+let pares = 0;
 
 function embaralhar(lista) {
     let novaLista = [];
@@ -47,6 +50,9 @@ function adicionarFigura() {
         blocosFrente[i].style.backgroundImage = `url(${figuras[i]})`;
     }
 }
+function ganhou() {
+    retorno.innerHTML = `Você ganhou com ${tentativas} tentativas.`
+}
 function verificar(bloco) {
     if(paraVerificar != [] && paraVerificar[0] != bloco) {
         paraVerificar[paraVerificar.length] = bloco;
@@ -59,6 +65,10 @@ function verificar(bloco) {
                 paraVerificar[0].style.opacity = "0";
                 paraVerificar[1].style.opacity = "0";
                 paraVerificar = [];
+                pares++;
+                if(pares == 12) {
+                    ganhou();
+                }
             },500);
         } else {
             setTimeout(() => {
@@ -67,6 +77,7 @@ function verificar(bloco) {
                 paraVerificar = [];
             },500);
         }
+        tentativas++;
     }
 }
 function girar(event) {
