@@ -48,7 +48,9 @@ function adicionarFigura() {
     }
 }
 function verificar(bloco) {
-    paraVerificar[paraVerificar.length] = bloco;
+    if(paraVerificar != [] && paraVerificar[0] != bloco) {
+        paraVerificar[paraVerificar.length] = bloco;
+    }
     if(paraVerificar.length == 2) {
         if(paraVerificar[0].querySelector("div:last-child").style.backgroundImage == paraVerificar[1].querySelector("div:last-child").style.backgroundImage) {
             paraVerificar[0].onclick = "";
