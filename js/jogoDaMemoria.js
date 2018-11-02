@@ -1,4 +1,4 @@
-const blocos = document.querySelectorAll("section>div");
+const blocosCostas = document.querySelectorAll("section>div>div:first-child");
 const blocosFrente = document.querySelectorAll("section>div>div:last-child");
 
 let paraVerificar = [];
@@ -76,7 +76,7 @@ function girar(event) {
     }
 }
 
-for(let bloco of blocos) {
+for(let bloco of blocosCostas) {
     bloco.onclick = girar;
 }
 adicionarFigura();
