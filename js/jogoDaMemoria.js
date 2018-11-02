@@ -70,8 +70,10 @@ function verificar(bloco) {
     }
 }
 function girar(event) {
-    event.target.parentNode.style.transform = "rotateY(180deg)";
-    verificar(event.target.parentNode);
+    if(paraVerificar.length < 2) {
+        event.target.parentNode.style.transform = "rotateY(180deg)";
+        verificar(event.target.parentNode);
+    }
 }
 
 for(let bloco of blocos) {
