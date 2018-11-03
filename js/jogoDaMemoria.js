@@ -1,8 +1,7 @@
-const blocosCostas = document.querySelectorAll("section>div>div:first-child");
-const blocosFrente = document.querySelectorAll("section>div>div:last-child");
-const retorno = document.querySelector("section>span");
-
-let paraVerificar = [];
+let retorno;
+let blocosCostas;
+let blocosFrente;
+let paraVerificar = []; 
 let tentativas = 0;
 let pares = 0;
 
@@ -50,7 +49,21 @@ function adicionarFigura() {
         blocosFrente[i].style.backgroundImage = `url(${figuras[i]})`;
     }
 }
+function criarBlocos() {
+    let section = document.querySelector("section")
+    for(let i = 0;i < 24; i++) {
+        section.innerHTML += "<div><div></div><div></div></div>";
+    }
+    blocosFrente = document.querySelectorAll("section>div>div:last-child");
+    blocosCostas = document.querySelectorAll("section>div>div:first-child");
+    for(let bloco of blocosCostas) {
+        bloco.onclick = girar;
+    }
+    adicionarFigura();
+}
 function ganhou() {
+    document.querySelector("section").innerHTML = "<span></span>";
+    retorno = document.querySelector("section>span");
     retorno.innerHTML = `Você ganhou com ${tentativas} tentativas.`
 }
 function verificar(bloco) {
@@ -98,8 +111,4 @@ function girar(event) {
         verificar(event.target.parentNode);
     }
 }
-
-for(let bloco of blocosCostas) {
-    bloco.onclick = girar;
-}
-adicionarFigura();
+criarBlocos();
