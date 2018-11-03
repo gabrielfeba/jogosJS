@@ -18,6 +18,9 @@ function verificar(quem) {
     const retorno = document.querySelector("section>span");
     const linhas = document.querySelectorAll("section>div");
     if((caixas[0].innerHTML != "" && caixas[0].innerHTML == caixas[1].innerHTML && caixas[1].innerHTML == caixas[2].innerHTML) || (caixas[3].innerHTML != "" && caixas[3].innerHTML == caixas[4].innerHTML && caixas[4].innerHTML == caixas[5].innerHTML) || (caixas[6].innerHTML != "" && caixas[6].innerHTML == caixas[7].innerHTML && caixas[7].innerHTML == caixas[8].innerHTML) || (caixas[0].innerHTML != "" && caixas[0].innerHTML == caixas[3].innerHTML && caixas[3].innerHTML == caixas[6].innerHTML) || (caixas[1].innerHTML != "" && caixas[1].innerHTML == caixas[4].innerHTML && caixas[4].innerHTML == caixas[7].innerHTML) || (caixas[2].innerHTML != "" && caixas[2].innerHTML == caixas[5].innerHTML && caixas[5].innerHTML == caixas[8].innerHTML) || (caixas[0].innerHTML != "" && caixas[0].innerHTML == caixas[4].innerHTML && caixas[4].innerHTML == caixas[8].innerHTML) || (caixas[2].innerHTML != "" && caixas[2].innerHTML == caixas[4].innerHTML && caixas[4].innerHTML == caixas[6].innerHTML)) {
+        for(let caixa of caixas) {
+            caixa.onclick = "";
+        }
        setTimeout(() => {
             for(let linha of linhas) {
                 linha.style.visibility = "hidden";
@@ -31,6 +34,9 @@ function verificar(quem) {
             retorno.innerHTML = `${quem} GANHOU`;
         }, 500);
     } else if(contaCliques == 9) {
+        for(let caixa of caixas) {
+            caixa.onclick = "";
+        }
         setTimeout(() => {
             for(let linha of linhas) {
                 linha.style.visibility = "hidden";
