@@ -21,7 +21,7 @@ function verificar(quem) {
         for(let caixa of caixas) {
             caixa.onclick = "";
         }
-       setTimeout(() => {
+        setTimeout(() => {
             for(let linha of linhas) {
                 linha.style.visibility = "hidden";
             }
@@ -30,8 +30,30 @@ function verificar(quem) {
             } else {
                 retorno.style.color = "red";
             }
-            retorno.style.display = "block"
-            retorno.innerHTML = `${quem} GANHOU`;
+            retorno.style.display = "flex";
+            retorno.innerHTML = `'${quem}' GANHOU<button>Começar novamente...</button>`;
+
+            let botao = document.querySelector("button");
+            botao.style.fontWeight = "bolder";
+            botao.style.marginTop = "12px";
+            botao.style.border = "none";
+            botao.style.fontSize = "14pt";
+            botao.style.borderRadius = "5px";
+            botao.style.padding = "10px";
+            botao.style.cursor = "pointer";
+
+            botao.onclick = () => {
+                contaCliques = 0;
+                for(let caixa of caixas) {
+                    caixa.innerHTML = "";
+                    caixa.onclick = adicionar;
+                }
+                for(let linha of linhas) {
+                    linha.style.visibility = "";
+                }
+                retorno.innerHTML = "";
+                retorno.display = "";
+            }
         }, 500);
     } else if(contaCliques == 9) {
         for(let caixa of caixas) {
