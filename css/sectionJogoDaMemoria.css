@@ -45,6 +45,9 @@ section>span {
     font-size: 25pt;
     z-index: 1;
 }
+section>span>button:hover {
+    background-color: white;
+}
 @media screen and (min-width: 480px) {
     section>div, section>div>div:first-child, section>div>div:last-child {
         width: 80px;

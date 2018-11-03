@@ -65,6 +65,21 @@ function ganhou() {
     document.querySelector("section").innerHTML = "<span></span>";
     retorno = document.querySelector("section>span");
     retorno.innerHTML = `Você ganhou com ${tentativas} tentativas.`
+    retorno.innerHTML += "<button>Começar novamente...</button>";
+
+    let botao = document.querySelector("section button");
+    botao.style.fontWeight = "bolder";
+    botao.style.marginTop = "12px";
+    botao.style.border = "none";
+    botao.style.fontSize = "14pt";
+    botao.style.borderRadius = "5px";
+    botao.style.padding = "10px";
+    botao.style.cursor = "pointer";
+
+    botao.onclick = () => {
+        document.querySelector("section").innerHTML = "";
+        criarBlocos();
+    }
 }
 function verificar(bloco) {
     let blocoGeral = bloco;
