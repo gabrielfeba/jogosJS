@@ -1,0 +1,13 @@
+#divExterna {
+    height: 300px;
+    border: solid 2px black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.quadradinho{
+    height: 200px;
+    width: 200px;
+    border: dotted 4px black;
+}
